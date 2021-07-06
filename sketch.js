@@ -50,7 +50,7 @@ function draw()
     for(var i =0; i < balls.length; i++)
     {
    
-       showCannonBalls(balls[i]);
+       showCannonBalls(balls[i],i);
     }
 
 
@@ -61,13 +61,13 @@ function draw()
    // cannonball.display();
 }
 
-function showCannonBalls(cannonball)
+function showCannonBalls(cannonball,i)
 {
     cannonball.display();
     if(cannonball.body.position.x >=width || cannonball.body.position.y >=height)
     {
        World.remove(myWorld, cannonball.body);
-       balls.splice(balls.length - 1)
+       balls.splice(i,1)
     }
 }
 
